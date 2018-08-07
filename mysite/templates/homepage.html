@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客首页</title>
+</head>
+<body>
+<h1>欢迎来到我的博客哦</h1>
+<hr>
+{% for post in posts%}
+<!--<span style="font-size: 20px">{{post.title}}</span>-->
+<a href="/post/{{post.slug}}">{{post.title}}</a>
+<br>
+{% endfor %}
+<hr>
+现在时刻：{{now}}
+</body>
+</html>
