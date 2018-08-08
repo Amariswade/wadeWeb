@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>博客首页</title>
-</head>
-<body>
-<h1>欢迎来到我的博客哦</h1>
-<hr>
-{% for post in posts%}
-<!--<span style="font-size: 20px">{{post.title}}</span>-->
-<a href="/post/{{post.slug}}">{{post.title}}</a>
-<br>
-{% endfor %}
-<hr>
-现在时刻：{{now}}
-</body>
-</html>
+<!--homepage.html-->
+{% extends "base.html" %}
+{% block title %}欢迎来到我的博客哦{% endblock %}
+{% block headermessage %}
+    <h3 style="font-family: 微软雅黑">本站文章列表</h3>
+{% endblock %}
+{% block bodymessage %}
+    {% for post in posts %}
+        <p><a href="/post/{{post.slug}}">{{post.title}}</a></p>
+    {% endfor %}
+{% endblock %}

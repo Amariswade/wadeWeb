@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>我的博客</title>
-</head>
-<body>
-<h1>{{post.title}}</h1>
-<hr>
-{{post.body}}
-<br>
-<a href="/">回首页</a>
-</body>
-</html>
+<!--detail.html-->
+{% extends "base.html" %}
+{% block title %}{{post.title}}{% endblock %}
+{% block headermessage %}
+    <h3 style="font-family: 微软雅黑">{{post.title}}</h3>
+    <a href="/">回到首页</a>
+{% endblock %}
+{% block bodymessage %}
+    <p>{{post.body}}</p>
+{% endblock %}
